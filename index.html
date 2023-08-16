@@ -10,6 +10,7 @@
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+        <script src="js/main.js"></script>
         <script>
             let pages = ["Home", "Contacts", "Projects", "Resume"];
 
@@ -22,7 +23,7 @@
                         );
                         $(`#${val}`).on('click', function(){
                             $('#content').load(`pages/${val}.html`, function(){
-                                $.getScript(`js/${val}.js`);
+                                script(val);
                             });
                             // $('#navbar-toggler').click();
                         });
