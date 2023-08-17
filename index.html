@@ -1,36 +1,53 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head></head>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+        <meta name="description" content="Abdurrahman Farras Fadhila Triandhono Fullstack Developer Website Portofolio" />
+        <meta name="author" content="farras.ft" />
+        <title>Fugo's Porto</title>
+        <!-- Resources -->
+        <link rel="icon" type="image/x-icon" href="assets/F-icon.svg" />
+        <link rel="preconnect" href="https://fonts.googleapis.com" />
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"rel="stylesheet" />
+        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+        <link href="css/styles.css" rel="stylesheet" />
+    </head>
     <body class="d-flex flex-column h-100">
         <main class="flex-shrink-0">
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3"></nav>
+            <!-- Navbar components -->
+            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
+                <div class="container px-5">
+                    <a class="navbar-brand" href="index.html"><span class="fw-bolder text-primary"><img height="50" src="assets/F.svg" alt="F logo"></span></a>
+                    <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                        <ul id="navbar" class="navbar-nav ms-auto mb-2 mb-lg-0 small fw-bolder"></ul>
+                    </div>
+                </div>
+            </nav>
+            <!-- Content -->
             <div id="content"></div>
         </main>
-        <footer class="bg-white py-4 mt-auto"></footer>
+        <!-- Footer components -->
+        <footer class="bg-white py-4 mt-auto">
+            <div class="container px-5">
+                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                    <div class="col-auto"><div class="small m-0">Fugomika &copy; 2023</div></div>
+                    <div class="col-auto">
+                        <div class="d-flex justify-content-center fs-2 gap-4">
+                            <a class="text-gradient" target="_blank" href="https://www.instagram.com/farras.ft/"><i class="bi bi-instagram"></i></a>
+                            <a class="text-gradient" target="_blank" href="https://github.com/Fugomika"><i class="bi bi-github"></i></a>
+                            <a class="text-gradient" target="_blank" href="https://www.linkedin.com/in/abdurrahmanfarrasft/"><i class="bi bi-linkedin"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </footer>
+        <!-- Script -->
         <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
         <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
         <script src="js/main.js"></script>
-        <script>
-            let pages = ["Home", "Contacts", "Projects", "Resume"];
-
-            $('head').load('components/head.html', function(){
-                $('footer').load('components/footer.html');
-                $('nav').load('components/navbar.html', function(){
-                    $.each(pages, function (i,val) { 
-                        $('#navbar').append(
-                            `<li class="nav-item"><a id="${val}" class="nav-link">${val}</a></li>`
-                        );
-                        $(`#${val}`).on('click', function(){
-                            $('#content').load(`pages/${val}.html`, function(){
-                                script(val);
-                            });
-                            // $('#navbar-toggler').click();
-                        });
-                    });
-                    $('#Home').click();
-                });
-            });
-        </script>
     </body>
 </html>
