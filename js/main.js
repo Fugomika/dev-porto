@@ -24,14 +24,13 @@ $(document).ready(() => {
 function script(pages){
     // Home script
     if(pages == "Home"){
-        var typed = new Typed('#element', {
+        new Typed('#typed', {
             strings: ['esigner', 'eveloper'],
             typeSpeed: 100,
             backSpeed: 40,
             smartBackspace: false,
             loop: true,
             showCursor: true,
-            onLastStringBackspaced: (self) => {return "A"},
         });
         $('#since').html(new Date().getFullYear() - 2020);
         $('#index-resume').on('click', function () {
@@ -48,26 +47,31 @@ function script(pages){
 
     // Resume script
     if(pages == "Resume"){
-        var typed = new Typed('#soon', {
+        new Typed('#soon', {
             strings: ['Coming Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Soon ! :v'],
             typeSpeed: 30,
             showCursor: true,
-            onLastStringBackspaced: (self) => {return "A"},
         });
     }
 
     // Projects script
     if(pages == "Projects"){
-        var typed = new Typed('#soon', {
+        new Typed('#soon', {
             strings: ['Coming Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Soon ! :v'],
             typeSpeed: 30,
             showCursor: true,
-            onLastStringBackspaced: (self) => {return "A"},
         });
     }
 
     // Contacts script
     if(pages == "Contacts"){
+        new Typed('#typed', {
+            strings: ['Co-op with me?', "Let's work together!", "Interested making one of these?", "Catch up!", "Any ideas?"],
+            fadeOut: true,
+            loop: true,
+            backDelay: 2000,
+            shuffle: true
+        });
         $("#my-form").on("submit", function( event ) {
             var form = document.getElementById("my-form");
             
