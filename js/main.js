@@ -19,6 +19,20 @@ $(document).ready(() => {
 
     // Load initial page
     $('#Home').click();
+
+    new NodeCursor({
+        cursor : true, 
+        node : true, 
+        cursor_velocity : 1, 
+        node_velocity : 0.15, 
+        native_cursor : 'none', 
+        element_to_hover : '.nodeHover', 
+        cursor_class_hover : 'disable', 
+        node_class_hover : 'expand', 
+        hide_mode : true, 
+        hide_timing : 2000, 
+    });
+    $('a, button').addClass('hover__btn nodeHover');
 });
 
 function script(pages){
@@ -43,6 +57,7 @@ function script(pages){
                 script("Resume");
             });
         })
+        $('a').addClass('hover__btn nodeHover');
     }
 
     // Resume script
@@ -97,5 +112,6 @@ function script(pages){
             }
             form.addEventListener("submit", handleSubmit);
         });
+        $('a, button').addClass('hover__btn nodeHover');
     }
 }
