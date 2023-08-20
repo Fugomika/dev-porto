@@ -47,11 +47,7 @@ function script(pages){
 
     // Resume script
     if(pages == "Resume"){
-        new Typed('#soon', {
-            strings: ['Coming Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Soon ! :v'],
-            typeSpeed: 30,
-            showCursor: true,
-        });
+        $('.badge-class').addClass('d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow animate__animated animate__backInUp wow');
     }
 
     // Projects script
