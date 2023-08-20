@@ -52,11 +52,7 @@ function script(pages){
 
     // Projects script
     if(pages == "Projects"){
-        new Typed('#soon', {
-            strings: ['Coming Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Very Soon ! :v'],
-            typeSpeed: 30,
-            showCursor: true,
-        });
+        $('img').attr("onerror", "this.onerror=null; this.src='./assets/projects/noimage.jpg'");
     }
 
     // Contacts script
