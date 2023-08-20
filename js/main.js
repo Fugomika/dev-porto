@@ -61,6 +61,7 @@ function script(pages){
             strings: ['Co-op with me?', "Let's work together!", "Interested making one of these?", "Catch up!", "Any ideas?"],
             fadeOut: true,
             loop: true,
+            typeSpeed: 30,
             backDelay: 2000,
             shuffle: true
         });
