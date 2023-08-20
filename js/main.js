@@ -112,6 +112,6 @@ function script(pages){
             }
             form.addEventListener("submit", handleSubmit);
         });
-        $('a, button').addClass('hover__btn nodeHover');
+        $('button, input, textarea').addClass('hover__btn nodeHover');
     }
 }
