@@ -1,67 +1,87 @@
 <!DOCTYPE html>
 <html lang="en">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="Abdurrahman Farras Fadhila Triandhono Fullstack Developer Website Portofolio" />
-        <meta name="author" content="farras.ft" />
-        <meta property="og:image" content="assets/F-icon.svg" />
-        <title>Fugo's Porto</title>
-        <!-- Resources -->
-        <link rel="icon" type="image/x-icon" href="assets/F-icon.svg" />
-        <link rel="preconnect" href="https://fonts.googleapis.com" />
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-        <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"rel="stylesheet" />
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href='css/nodeCursor.css' rel='stylesheet' type='text/css'>
-    </head>
-    <body class="d-flex flex-column h-100">
-        <div class="node" id="node"></div>
-        <div class="cursor" id="cursor"></div>
-        <main class="flex-shrink-0">
-            <!-- Navbar components -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
-                <div class="container px-5">
-                    <a class="navbar-brand animate__animated animate__bounceInLeft" href=""><span class="fw-bolder text-primary"><img height="50" src="assets/F.svg" alt="F logo"></span></a>
-                    <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                        <ul id="navbar" class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bolder align-items-center animate__animated animate__bounceInRight"></ul>
-                    </div>
-                </div>
-            </nav>
-            <!-- Content -->
-            <div id="content"></div>
-        </main>
-        <!-- Footer components -->
-        <footer class="bg-white py-4 mt-auto">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+    <meta name="description" content="Abdurrahman Farras Fadhila Triandhono Fullstack Developer Website Portofolio" />
+    <meta name="author" content="farras.ft" />
+    <meta property="og:image" content="assets/F-icon.svg" />
+    <title>Fugo's Porto</title>
+    <!-- Resources -->
+    <link rel="icon" type="image/x-icon" href="assets/F-icon.svg" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@100;200;300;400;500;600;700;800;900&amp;display=swap"
+        rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css" />
+    <link href="css/styles.css" rel="stylesheet" />
+    <link href='css/nodeCursor.css' rel='stylesheet' type='text/css'>
+</head>
+
+<body class="d-flex flex-column h-100">
+    <div class="node" id="node"></div>
+    <div class="cursor" id="cursor"></div>
+    <main class="flex-shrink-0">
+        <!-- Navbar components -->
+        <nav class="navbar navbar-expand-lg navbar-light bg-white py-3">
             <div class="container px-5">
-                <div class="row align-items-center justify-content-between flex-column flex-sm-row">
-                    <div class="col-auto"><div class="small m-0  animate__animated animate__bounceInLeft wow">Fugomika &copy; 2023</div></div>
-                    <div class="col-auto">
-                        <div class="d-flex justify-content-center fs-2 gap-4 animate__animated animate__bounceInRight wow">
-                            <a class="text-gradient" target="_blank" href="https://www.instagram.com/farras.ft/"><i class="bi bi-instagram"></i></a>
-                            <a class="text-gradient" target="_blank" href="https://github.com/Fugomika"><i class="bi bi-github"></i></a>
-                            <a class="text-gradient" target="_blank" href="https://www.linkedin.com/in/abdurrahmanfarrasft/"><i class="bi bi-linkedin"></i></a>
-                        </div>
+                <a class="navbar-brand animate__animated animate__bounceInLeft" href=""><span
+                        class="fw-bolder text-primary"><img height="50" src="assets/F.svg" alt="F logo"></span></a>
+                <button id="navbar-toggler" class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation"><span
+                        class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul id="navbar"
+                        class="navbar-nav ms-auto mb-2 mb-lg-0 fw-bolder align-items-center animate__animated animate__bounceInRight">
+                    </ul>
+                </div>
+            </div>
+        </nav>
+        <!-- Content -->
+        <div id="content"></div>
+    </main>
+    <!-- Footer components -->
+    <footer class="bg-white py-4 mt-auto">
+        <div class="container px-5">
+            <div class="row align-items-center justify-content-between flex-column flex-sm-row">
+                <div class="col-auto">
+                    <div class="small m-0  animate__animated animate__bounceInLeft wow">Fugomika &copy; 2023</div>
+                </div>
+                <div class="col-auto">
+                    <div class="d-flex justify-content-center fs-2 gap-4 animate__animated animate__bounceInRight wow">
+                        <a class="text-gradient" target="_blank" href="https://www.instagram.com/farras.ft/"><i
+                                class="bi bi-instagram"></i></a>
+                        <a class="text-gradient" target="_blank" href="https://github.com/Fugomika"><i
+                                class="bi bi-github"></i></a>
+                        <a class="text-gradient" target="_blank"
+                            href="https://www.linkedin.com/in/abdurrahmanfarrasft/"><i class="bi bi-linkedin"></i></a>
                     </div>
                 </div>
             </div>
-        </footer>
-        <!-- Script -->
-        <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js" integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
-        <script src="js/main.js"></script>
-        <script src="js/nodecursor-jquery.min.js"></script>
-        <!-- <script src="lib/easing/easing.min.js"></script>
+        </div>
+    </footer>
+    <!-- Script -->
+    <script src="https://cdn.jsdelivr.net/npm/jquery@3.7.0/dist/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://unpkg.com/typed.js@2.0.16/dist/typed.umd.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/wow/1.1.2/wow.min.js"
+        integrity="sha512-Eak/29OTpb36LLo2r47IpVzPBLXnAMPAVypbSZiZ4Qkf8p/7S/XRG5xp7OKWPPYfJT6metI+IORkR5G8F900+g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <script src="js/main.js"></script>
+    <script src="js/nodecursor-jquery.min.js"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+    <!-- <script src="lib/easing/easing.min.js"></script>
         <script src="lib/waypoints/waypoints.min.js"></script>
         <script src="lib/counterup/counterup.min.js"></script>
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         <script src="lib/isotope/isotope.pkgd.min.js"></script>
         <script src="lib/lightbox/js/lightbox.min.js"></script> -->
 
-    </body>
+</body>
+
 </html>

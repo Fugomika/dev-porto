@@ -1,6 +1,6 @@
 $(document).ready(() => {
     new WOW().init();
-    const pages = ["Home", "Projects", "Resume", "Contacts"];
+    const pages = ["Home" , "Blogs", "Projects", "Resume", "Contacts"];
 
     const navbarItems = pages.map(val => `
         <li class="nav-item">
@@ -113,5 +113,51 @@ function script(pages){
             form.addEventListener("submit", handleSubmit);
         });
         $('button, input, textarea').addClass('hover__btn nodeHover');
+    }
+
+    if(pages == "Blogs"){
+        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbyxLvknE4Q7_kWbxtYJjelrcbGG3KbWueQi_FCSUxAkwBn3JqRuYUubGIj-8Q2XuOa6XQ/exec';
+
+        async function fetchFileList() {
+            try {
+                const response = await fetch(`${googleScriptURL}`);
+                const data = await response.json();
+
+                const fileListContainer = document.getElementById('file-list');
+                fileListContainer.innerHTML = '';
+
+                data.forEach(file => {
+                    const fileLink = document.createElement('a');
+                    fileLink.href = '#';
+                    fileLink.textContent = file.name;
+                    fileLink.onclick = () => fetchFileContent(file);
+                    fileListContainer.appendChild(fileLink);
+                    fileListContainer.appendChild(document.createElement('br'));
+                });
+            } catch (error) {
+                console.error('Error fetching file list:', error);
+            }
+        }
+
+        // Fetch the content of a file and display it as HTML
+        async function fetchFileContent(file) {
+            try {
+                $('#ArticleTitle').hide();
+                $('#file-list').hide();
+                const response = await fetch(`${googleScriptURL}?fileId=${file.id}`);
+                const data = await response.text();
+
+                const fileContentContainer = document.getElementById('file-content');
+                fileContentContainer.innerHTML = marked.parse(data); // Using `marked` to parse markdown to HTML
+
+                $('#ArticleTitle').show().find('span').text(file.name);
+            } catch (error) {
+                console.error('Error fetching file content:', error);
+            }
+        }
+
+        // Initialize by fetching the file list
+        fetchFileList();
+
     }
 }
