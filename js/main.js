@@ -127,12 +127,22 @@ function script(pages){
                 fileListContainer.innerHTML = '';
 
                 data.forEach(file => {
+                    const fileWrapper = document.createElement('div');
+        
                     const fileLink = document.createElement('a');
-                    fileLink.href = '#';
+                    fileLink.href = 'javascript:void(0)';
+                    fileLink.classList.add('text-gradient');
+                    fileLink.classList.add('h4');
+                    fileLink.classList.add('list-unstyled');
+                    file.name = file.name.replace('.md', '');
                     fileLink.textContent = file.name;
                     fileLink.onclick = () => fetchFileContent(file);
-                    fileListContainer.appendChild(fileLink);
-                    fileListContainer.appendChild(document.createElement('br'));
+                    
+                    fileWrapper.appendChild(fileLink);
+                    fileWrapper.appendChild(document.createElement('br'));
+                    fileWrapper.appendChild(document.createElement('hr'));
+                    
+                    fileListContainer.appendChild(fileWrapper);
                 });
             } catch (error) {
                 console.error('Error fetching file list:', error);
@@ -159,5 +169,11 @@ function script(pages){
         // Initialize by fetching the file list
         fetchFileList();
 
+        $('#search-box').on('keyup', function () {
+            const value = $(this).val().toLowerCase();
+            $('#file-list div').filter(function () {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+            });
+        });
     }
 }
