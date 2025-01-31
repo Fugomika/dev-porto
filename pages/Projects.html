@@ -1,66 +1,9 @@
 <section class="py-5 animate__animated animate__fadeIn">
     <div class="container px-5 mb-5">
-        <div class="text-center mb-5">
+        <div class="text-center mb-5" >
             <h1 class="display-4 fw-bolder mb-5"><span class="text-gradient d-inline">Projects</span></h1>
         </div>
-        <div class="row row-cols-1 row-cols-lg-3 g-4">
-
-          <div class="col">
-            <div class="card shadow border-0 rounded-4 mb-5 animate__animated animate__backInUp wow h-100">
-              <img src="./assets/projects/workspace.png" alt="img" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Workspace</h5>
-                <p class="card-text">
-                  Workspace help you streamlines employee administrative processes and improves data accuracy to gain valuable insight for HR Team
-                </p>
-                <p class="text-muted">Aug 2022 - WIP</p>
-              </div>
-              <div class="card-footer">
-                <span class="badge bg-primary">Laravel 8.x</span>
-                <span class="badge bg-primary">jQuery</span>
-                <span class="badge bg-primary">MySQL</span>
-                <span class="badge bg-primary">Bootstrap</span>
-              </div>
-            </div>
-          </div>
-
-          <div class="col">
-            <div class="card shadow border-0 rounded-4 mb-5 animate__animated animate__backInUp wow h-100">
-              <img src="./assets/projects/documine.png" alt="img" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Documine</h5>
-                <p class="card-text">
-                  Document Management System for managing company mail agendas, from incoming mail to outgoing mail. This application allows the process of recording, numbering and approval to be more concise and fast.
-                </p>
-                <p class="text-muted">Aug 2022 - Dec 2022</p>
-              </div>
-              <div class="card-footer">
-                <span class="badge bg-primary">CodeIgniter 3</span>
-                <span class="badge bg-primary">jQuery</span>
-                <span class="badge bg-primary">MySQL</span>
-                <span class="badge bg-primary">Bootstrap</span>
-              </div>
-            </div>
-          </div>
-          
-          <div class="col">
-            <div class="card shadow border-0 rounded-4 mb-5 animate__animated animate__backInUp wow h-100">
-              <img src="./assets/projects/jasindo.png" alt="img" class="card-img-top">
-              <div class="card-body">
-                <h5 class="card-title">Jasindo Risk Management System</h5>
-                <p class="card-text">
-                  Risk Management System to effectively manage companies IT and security risks, reduce costs, and meet compliance requirements, also helps improve decision-making and performance through an integrated view of how well an organization manages its risks.
-                </p>
-                <p class="text-muted">Nov 2022</p>
-              </div>
-              <div class="card-footer">
-                <span class="badge bg-primary">Laravel</span>
-                <span class="badge bg-primary">jQuery</span>
-                <span class="badge bg-primary">MySQL</span>
-                <span class="badge bg-primary">Bootstrap</span>
-              </div>
-            </div>
-          </div>
+        <div class="row row-cols-1 row-cols-lg-2 g-4" id="projects-container">
           
           <div class="col">
             <div class="card shadow border-0 rounded-4 mb-5 animate__animated animate__backInUp wow h-100">
@@ -111,4 +54,9 @@
   if(window.location.href.substr(-5, 5) == ".html"){
     window.location.replace("/fugo-porto");
   };
+  $(document).ready(function(){
+    $('.carousel').carousel({
+      interval: 2000
+    });
+  });
 </script>
