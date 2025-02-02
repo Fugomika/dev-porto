@@ -149,12 +149,26 @@ function script(pages){
             if(project.images){
                 project.images.forEach((data, index) => {
                     
-                    var link = '';
-                    if(data.link){
-                        link = `<a href="${data.link}" target="_blank" class="btn btn-primary w-100">View</a>`;
+                    var imgLink = `https://fugomika.github.io/dev-files/img/${data.file}`;
+                    var capt = '';
+                    if(data.link || data.title || data.description){
+                        capt = `<div class="carousel-caption text-white">`;
+                        if(data.link){
+                            capt += `<a href="${data.link}" target="_blank" class="text-white">`;
+                        }
+                        if(data.title){
+                            capt += `<h6 class="bg-dark bg-gradient bg-opacity-75 py-1 rounded-2">${data.title}`;
+                        }
+                        if(data.link){
+                            capt += `<i class="ms-2 bi bi-box-arrow-up-right"></i></h6></a>`;
+                        }
+                        if(data.description){
+                            capt += `<small class="bg-dark bg-gradient bg-opacity-75 p-1 rounded-2">${data.description}</small>`;
+                        }
+                        capt += `</div>`;
                     }
 
-                    inner += `<div class="carousel-item ${index == 0 ? 'active' : ''}"><img src="https://fugomika.github.io/dev-files/img/${data.file}" class="d-block w-100" alt="...">${link}</div>`;
+                    inner += `<div class="carousel-item ${index == 0 ? 'active' : ''}"><a target="_blank" href="${imgLink}"><img src="${imgLink}" class="d-block w-100" alt="..."></a>${capt}</div>`;
                     indicators += `<button type="button" data-bs-target="#Carousel${id}" data-bs-slide-to="${index}" class="${index == 0 ? 'active' : ''}" aria-current="true" aria-label="Slide ${index + 1}"></button>`;
                 });
                 var carousel = $('#carousel-components').clone();
