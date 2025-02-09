@@ -2,6 +2,12 @@
 function script(pages){
     // Home script
     if(pages == "Home"){
+        var interval = setInterval(() => {
+            if(about.description != undefined){
+                clearInterval(interval);
+                $('#description').html("<p>" + about.description.replace(/\\n/g, '<br><br>') + "</p>");
+            }
+        }, 100);
         new Typed('#typed', {
             strings: ['esigner', 'eveloper'],
             typeSpeed: 100,
@@ -27,6 +33,65 @@ function script(pages){
     // Resume script
     if(pages == "Resume"){
         $('.badge-class').addClass('d-flex align-items-center bg-light rounded-4 p-3 h-100 shadow animate__animated animate__backInUp wow');
+
+        const experienceContainer = document.getElementById('experience-container');
+        resume.experience.forEach((exp, id) => {
+            const experienceCard = $('#experience-components').clone();
+            exp.start_date = new Date(exp.start_date).toLocaleString('default', { month: 'short', year: 'numeric' });
+            if(exp.end_date == "Present"){
+                exp.end_date = exp.end_date;
+            }else{
+                exp.end_date = new Date(exp.end_date).toLocaleString('default', { month: 'short', year: 'numeric' });
+            }
+            experienceCard.find('.start-date').text(exp.start_date);
+            experienceCard.find('.end-date').text(exp.end_date);
+            experienceCard.find('.title').text(exp.title);
+            experienceCard.find('.company').text(exp.company);
+            experienceCard.find('.location').text(exp.location);
+            if(exp.description != undefined){
+                experienceCard.find('.description').html('')
+                var ul = experienceCard.find('.description');
+                exp.description.forEach((desc, id) => {
+                    var li = document.createElement('li');
+                    li.textContent = desc;
+                    ul.append(li);
+                });
+            }else{
+                experienceCard.find('.description').remove();
+            }
+            experienceContainer.appendChild(experienceCard.get(0));
+        });
+
+        const educationContainer = document.getElementById('education-container');
+        resume.education.forEach((edu, id) => {
+            const educationCard = $('#education-components').clone();
+            educationCard.find('.school').text(edu.school);
+            educationCard.find('.degree').text(edu.degree);
+            if(edu.activities != undefined){
+                educationCard.find('.activities').html('')
+                var ul = educationCard.find('.activities');
+                edu.activities.forEach((act, id) => {
+                    var li = document.createElement('li');
+                    li.textContent = act;
+                    ul.append(li);
+                });
+            }else{
+                educationCard.find('.activities').remove();
+            }
+            if(edu.achievements != undefined){
+                educationCard.find('.achievements').html('')
+                var ul = educationCard.find('.achievements');
+                ul.append('<h6 class="text-muted">Achievements</h6>');
+                edu.achievements.forEach((ach, id) => {
+                    var li = document.createElement('li');
+                    li.textContent = ach;
+                    ul.append(li);
+                });
+            }else{
+                educationCard.find('.achievements').remove();
+            }
+            educationContainer.appendChild(educationCard.get(0));
+        });
     }
 
     // Projects script
@@ -89,7 +154,6 @@ function script(pages){
                 const data = await response.json();
 
                 const fileListContainer = document.getElementById('file-list');
-                fileListContainer.innerHTML = '';
 
                 data.forEach(file => {
                     const fileWrapper = document.createElement('div');
