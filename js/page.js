@@ -18,7 +18,7 @@ function script(pages){
         })
         $('#index-projects').on('click', function () {
             $('#content').load(`pages/Projects.html`, function(){
-                script("Resume");
+                script("Projects");
             });
         })
         $('a').addClass('hover__btn nodeHover');
