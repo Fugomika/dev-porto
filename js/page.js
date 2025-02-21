@@ -146,7 +146,7 @@ function script(pages){
 
     // Blogs script
     if(pages == "Blogs"){
-        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbyxLvknE4Q7_kWbxtYJjelrcbGG3KbWueQi_FCSUxAkwBn3JqRuYUubGIj-8Q2XuOa6XQ/exec';
+        const googleScriptURL = 'https://script.google.com/macros/s/AKfycbyISV8O6WB7DxWC6OJkZJZQXQWTiFkSoZ8nNd-fFuP_9WTkRHYjK50E4CkTCv6EMDKngQ/exec';
 
         async function fetchFileList() {
             try {
