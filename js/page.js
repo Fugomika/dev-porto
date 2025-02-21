@@ -198,6 +198,20 @@ function script(pages){
         // Initialize by fetching the file list
         fetchFileList();
 
+        const searchBox = document.getElementById('search-box');
+        searchBox.addEventListener('input', () => {
+            const searchValue = searchBox.value.toLowerCase();
+            const fileLinks = document.querySelectorAll('#file-list a');
+            fileLinks.forEach(link => {
+                const fileTitle = link.textContent.toLowerCase();
+                if (fileTitle.includes(searchValue)) {
+                    link.parentElement.style.display = '';
+                } else {
+                    link.parentElement.style.display = 'none';
+                }
+            });
+        });
+
     }
     
     // Projects script
