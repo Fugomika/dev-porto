@@ -148,6 +148,15 @@ function script(pages){
     if(pages == "Blogs"){
         const googleScriptURL = 'https://script.google.com/macros/s/AKfycbyISV8O6WB7DxWC6OJkZJZQXQWTiFkSoZ8nNd-fFuP_9WTkRHYjK50E4CkTCv6EMDKngQ/exec';
 
+        const articlesException = [
+            'Cuci Sepatu.md',
+            'Kevin Meal Plan for 30 Days Experiment!.md',
+            'Markdown Cheat Sheet.md',
+            'Pornography Effects.md',
+            'Inspiring Articles Archives.md',
+            'Kevin Meal Plan for 30 Days Experiment!.md',
+        ]
+
         async function fetchFileList() {
             try {
                 const response = await fetch(`${googleScriptURL}`);
@@ -156,6 +165,11 @@ function script(pages){
                 const fileListContainer = document.getElementById('file-list');
 
                 data.forEach(file => {
+                    
+                    if(articlesException.includes(file.name)){
+                        return;
+                    }
+
                     const fileWrapper = document.createElement('div');
         
                     const fileLink = document.createElement('a');
